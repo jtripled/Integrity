@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "reinforced_glass",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:stained_glass",
+      "data": 14
+    }
+  ],
+  "result": {
+    "item": "integrity:red_reinforced_glass",
+    "count": 1
+  }
+}

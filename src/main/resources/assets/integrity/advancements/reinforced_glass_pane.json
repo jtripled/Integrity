@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "integrity:reinforced_glass_pane",
+      "integrity:black_reinforced_glass_pane",
+      "integrity:blue_reinforced_glass_pane",
+      "integrity:brown_reinforced_glass_pane",
+      "integrity:cyan_reinforced_glass_pane",
+      "integrity:gray_reinforced_glass_pane",
+      "integrity:green_reinforced_glass_pane",
+      "integrity:light_blue_reinforced_glass_pane",
+      "integrity:lime_reinforced_glass_pane",
+      "integrity:magenta_reinforced_glass_pane",
+      "integrity:orange_reinforced_glass_pane",
+      "integrity:pink_reinforced_glass_pane",
+      "integrity:purple_reinforced_glass_pane",
+      "integrity:red_reinforced_glass_pane",
+      "integrity:silver_reinforced_glass_pane",
+      "integrity:white_reinforced_glass_pane",
+      "integrity:yellow_reinforced_glass_pane"
+    ]
+  },
+  "criteria": {
+    "has_iron_bars": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_bars"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_bars"
+    ]
+  ]
+}

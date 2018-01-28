@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "blocks/glass_white",
+        "layer1": "integrity:block/reinforced_glass"
+    }
+}

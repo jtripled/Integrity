@@ -1,0 +1,16 @@
+[
+{
+  "modid": "integrity",
+  "name": "Integrity",
+  "description": "Adds several reinforced variants to common blocks.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["jtripled"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["voxen"]
+}
+]

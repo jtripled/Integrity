@@ -1,0 +1,57 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "integrity:reinforced_glass",
+      "integrity:black_reinforced_glass",
+      "integrity:blue_reinforced_glass",
+      "integrity:brown_reinforced_glass",
+      "integrity:cyan_reinforced_glass",
+      "integrity:gray_reinforced_glass",
+      "integrity:green_reinforced_glass",
+      "integrity:light_blue_reinforced_glass",
+      "integrity:lime_reinforced_glass",
+      "integrity:magenta_reinforced_glass",
+      "integrity:orange_reinforced_glass",
+      "integrity:pink_reinforced_glass",
+      "integrity:purple_reinforced_glass",
+      "integrity:red_reinforced_glass",
+      "integrity:silver_reinforced_glass",
+      "integrity:white_reinforced_glass",
+      "integrity:yellow_reinforced_glass",
+      "integrity:black_reinforced_glass_1",
+      "integrity:blue_reinforced_glass_1",
+      "integrity:brown_reinforced_glass_1",
+      "integrity:cyan_reinforced_glass_1",
+      "integrity:gray_reinforced_glass_1",
+      "integrity:green_reinforced_glass_1",
+      "integrity:light_blue_reinforced_glass_1",
+      "integrity:lime_reinforced_glass_1",
+      "integrity:magenta_reinforced_glass_1",
+      "integrity:orange_reinforced_glass_1",
+      "integrity:pink_reinforced_glass_1",
+      "integrity:purple_reinforced_glass_1",
+      "integrity:red_reinforced_glass_1",
+      "integrity:silver_reinforced_glass_1",
+      "integrity:white_reinforced_glass_1",
+      "integrity:yellow_reinforced_glass_1"
+    ]
+  },
+  "criteria": {
+    "has_iron_bars": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_bars"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_bars"
+    ]
+  ]
+}

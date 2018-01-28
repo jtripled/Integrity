@@ -1,0 +1,20 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "#pane"
+    },
+    "elements": [
+        {   "from": [ 6.99, 0.01, 6.99 ],
+            "to": [ 9.01, 15.99, 9.01 ],
+            "faces": {
+                "north": { "uv": [  9, 0,  7, 16 ], "texture": "#pane" }
+            }
+        },
+        {   "from": [ 6.99, 0, 6.99 ],
+            "to": [ 9.01, 16, 9.01 ],
+            "faces": {
+                "north": { "uv": [  9, 0,  7, 16 ], "texture": "#overlay" }
+            }
+        }
+    ]
+}

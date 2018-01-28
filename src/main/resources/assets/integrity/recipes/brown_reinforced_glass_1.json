@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "reinforced_glass",
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "integrity:reinforced_glass"
+    },
+    "@": {
+      "item": "minecraft:dye",
+      "data": 3
+    }
+  },
+  "result": {
+    "item": "integrity:brown_reinforced_glass",
+    "count": 8
+  }
+}
