@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -25,7 +24,6 @@ public class Integrity extends ModBase
     public static final String VERSION = "1.0";
     
     public static Registry REGISTRY;
-    public static Logger LOGGER;
 
     @Override
     public String getID()
@@ -56,7 +54,6 @@ public class Integrity extends ModBase
     {
         REGISTRY = new IntegrityRegistry();
         preInit(event);
-        LOGGER = this.getLogger();
     }
     
     @EventHandler

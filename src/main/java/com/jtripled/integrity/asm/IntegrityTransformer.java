@@ -1,6 +1,8 @@
 package com.jtripled.integrity.asm;
 
 import com.jtripled.integrity.IntegrityRegistry;
+import com.jtripled.voxen.asm.ClassTransformer;
+import com.jtripled.voxen.asm.Type;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockConcretePowder;
@@ -9,12 +11,10 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityFallingBlock;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.launchwrapper.IClassTransformer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -29,86 +29,82 @@ import org.objectweb.asm.tree.VarInsnNode;
  *
  * @author jtripled
  */
-public class IntegrityTransformer implements IClassTransformer
+public class IntegrityTransformer extends ClassTransformer
 {
     public static String[] ON_END_FALLING_NAMES = { "onEndFalling" };
+
+    @Override
+    public String[] getClasses()
+    {
+        return new String[] {
+            "net.minecraft.block.BlockConcretePowder",
+            "net.minecraft.block.BlockPane"
+        };
+    }
     
     @Override
-    public byte[] transform(String name, String transformedName, byte[] bytes)
+    public byte[] onTransform(String className, byte[] bytes, ClassNode node, boolean obfuscated)
     {
-        if (transformedName.equals("net.minecraft.block.BlockConcretePowder"))
+        if (isClass("net.minecraft.block.BlockConcretePowder"))
         {
-            System.out.println("Applying ASM transformations to BlockConcretePowder");
-            boolean obfuscated = !transformedName.equals(name);
-            ClassNode node = new ClassNode();
-            ClassReader reader = new ClassReader(bytes);
-            reader.accept(node, 0);
+            String[] onEndFallingNames = { "onEndFalling" };
+            String onEndFallingDescription = createMethodDescription(Type.VOID, Type.WORLD, Type.BLOCK_POS, Type.BLOCK_STATE, "net.minecraft.block.state.IBlockState");
+            String[] updateTickNames = { "updateTick" };
+            String updateTickDescription = createMethodDescription(Type.VOID, Type.WORLD, Type.BLOCK_POS, Type.BLOCK_STATE, Type.RANDOM);
             
             for (MethodNode method : node.methods)
             {
-                if (ASMHelper.methodEquals(method, ON_END_FALLING_NAMES, ASMHelper.createMethodDescriptor(obfuscated, "V", "net/minecraft/world/World", "net/minecraft/util/math/BlockPos", "net/minecraft/block/state/IBlockState", "net/minecraft/block/state/IBlockState")))
+                if (isMethod(method, onEndFallingNames, onEndFallingDescription))
                 {
                     System.out.println("Transforming net.minecraft.block.BlockConcretePowder#onEndFalling");
                     
                     InsnList instructions = new InsnList();
-                    
                     instructions.add(new VarInsnNode(Opcodes.ALOAD, 1));
                     instructions.add(new VarInsnNode(Opcodes.ALOAD, 2));
                     instructions.add(new VarInsnNode(Opcodes.ALOAD, 3));
                     instructions.add(new VarInsnNode(Opcodes.ALOAD, 4));
-                    instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC,
-                            "com/jtripled/integrity/asm/IntegrityTransformer", "onEndFalling",
-                            ASMHelper.createMethodDescriptor(obfuscated, "V", "net/minecraft/world/World", "net/minecraft/util/math/BlockPos", "net/minecraft/block/state/IBlockState", "net/minecraft/block/state/IBlockState"), false));
+                    instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "com/jtripled/integrity/asm/IntegrityTransformer", "onEndFalling", onEndFallingDescription, false));
                     instructions.add(new InsnNode(Opcodes.RETURN));
-                    
                     method.instructions.clear();
                     method.instructions.insert(instructions);
                     
                     System.out.println("Successfully transformed net.minecraft.block.BlockConcretePowder#onEndFalling");
+                    break;
                 }
             }
             
             ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS);
             node.accept(writer);
             
-            // Add 'updateTick' to BlockConcretePowder
             {
                 System.out.println("Adding net.minecraft.block.BlockConcretePowder#updateTick");
                 
-                MethodVisitor visitor = writer.visitMethod(Opcodes.ACC_PUBLIC, "updateTick", ASMHelper.createMethodDescriptor(obfuscated, "V", "net/minecraft/world/World", "net/minecraft/util/math/BlockPos", "net/minecraft/block/state/IBlockState", "java/util/Random"), null, null);
+                MethodVisitor visitor = writer.visitMethod(Opcodes.ACC_PUBLIC, updateTickNames[0], updateTickDescription, null, null);
                 visitor.visitVarInsn(Opcodes.ALOAD, 1);
                 visitor.visitVarInsn(Opcodes.ALOAD, 2);
                 visitor.visitVarInsn(Opcodes.ALOAD, 3);
                 visitor.visitVarInsn(Opcodes.ALOAD, 4);
-                visitor.visitMethodInsn(Opcodes.INVOKESTATIC,
-                        "com/jtripled/integrity/asm/IntegrityTransformer", "updateTick",
-                        ASMHelper.createMethodDescriptor(obfuscated, "V", "net/minecraft/world/World", "net/minecraft/util/math/BlockPos", "net/minecraft/block/state/IBlockState", "java/util/Random"), false);
+                visitor.visitMethodInsn(Opcodes.INVOKESTATIC, "com/jtripled/integrity/asm/IntegrityTransformer", "updateTick", updateTickDescription, false);
                 visitor.visitInsn(Opcodes.RETURN);
                 visitor.visitMaxs(0, 0);
                 
                 System.out.println("Successfully added net.minecraft.block.BlockConcretePowder#updateTick");
             }
             
-            bytes = writer.toByteArray();
-            System.out.println("Done applying ASM transformations to IntegrityTransformer");
-            return bytes;
+            return writer.toByteArray();
         }
-        if (transformedName.equals("net.minecraft.block.BlockPane"))
+        else if (isClass("net.minecraft.block.BlockPane"))
         {
-            System.out.println("Applying ASM transformations to BlockPane");
-            boolean obfuscated = !transformedName.equals(name);
-            ClassNode node = new ClassNode();
-            ClassReader reader = new ClassReader(bytes);
-            reader.accept(node, 0);
+            String[] onBlockActivatedNames = { "onBlockActivated" };
+            String onBlockActivatedDescription = createMethodDescription(Type.BOOL, Type.WORLD, Type.BLOCK_POS, Type.BLOCK_STATE, Type.ENTITY_PLAYER, Type.ENUM_HAND, Type.ENUM_FACING, Type.FLOAT, Type.FLOAT, Type.FLOAT);
             
             ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS);
             node.accept(writer);
             
-            // Add 'updateTick' to BlockConcretePowder
             {
                 System.out.println("Adding net.minecraft.block.BlockPane#onBlockActivated");
                 
-                MethodVisitor visitor = writer.visitMethod(Opcodes.ACC_PUBLIC, "onBlockActivated", ASMHelper.createMethodDescriptor(obfuscated, "Z", "net/minecraft/world/World", "net/minecraft/util/math/BlockPos", "net/minecraft/block/state/IBlockState", "net/minecraft/entity/player/EntityPlayer", "net/minecraft/util/EnumHand", "net/minecraft/util/EnumFacing", "F", "F", "F"), null, null);
+                MethodVisitor visitor = writer.visitMethod(Opcodes.ACC_PUBLIC, onBlockActivatedNames[0], onBlockActivatedDescription, null, null);
                 visitor.visitVarInsn(Opcodes.ALOAD, 1);
                 visitor.visitVarInsn(Opcodes.ALOAD, 2);
                 visitor.visitVarInsn(Opcodes.ALOAD, 3);
@@ -118,18 +114,14 @@ public class IntegrityTransformer implements IClassTransformer
                 visitor.visitVarInsn(Opcodes.FLOAD, 7);
                 visitor.visitVarInsn(Opcodes.FLOAD, 8);
                 visitor.visitVarInsn(Opcodes.FLOAD, 9);
-                visitor.visitMethodInsn(Opcodes.INVOKESTATIC,
-                        "com/jtripled/integrity/asm/IntegrityTransformer", "onBlockActivated",
-                        ASMHelper.createMethodDescriptor(obfuscated, "Z", "net/minecraft/world/World", "net/minecraft/util/math/BlockPos", "net/minecraft/block/state/IBlockState", "net/minecraft/entity/player/EntityPlayer", "net/minecraft/util/EnumHand", "net/minecraft/util/EnumFacing", "F", "F", "F"), false);
+                visitor.visitMethodInsn(Opcodes.INVOKESTATIC, "com/jtripled/integrity/asm/IntegrityTransformer", "onBlockActivated", onBlockActivatedDescription, false);
                 visitor.visitInsn(Opcodes.IRETURN);
                 visitor.visitMaxs(0, 0);
                 
                 System.out.println("Successfully added net.minecraft.block.BlockPane#onBlockActivated");
             }
             
-            bytes = writer.toByteArray();
-            System.out.println("Done applying ASM transformations to BlockPane");
-            return bytes;
+            return writer.toByteArray();
         }
         return bytes;
     }
