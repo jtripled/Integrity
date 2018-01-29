@@ -2,10 +2,11 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "door": "integrity:block/magenta_reinforced_trapdoor"
+            "door": "integrity:block/reinforced_trapdoor_magenta"
         }
     },
     "variants": {
+        "normal": { "model": "integrity:reinforced_trapdoor_bottom" },
         "facing=north,half=bottom,open=false": { "model": "integrity:reinforced_trapdoor_bottom" },
         "facing=south,half=bottom,open=false": { "model": "integrity:reinforced_trapdoor_bottom" },
         "facing=east,half=bottom,open=false": { "model": "integrity:reinforced_trapdoor_bottom" },

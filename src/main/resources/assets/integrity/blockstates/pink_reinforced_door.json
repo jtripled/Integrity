@@ -2,7 +2,8 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "door": "integrity:block/pink_reinforced_door"
+            "bottom": "integrity:block/reinforced_door_pink_bottom",
+            "top": "integrity:block/reinforced_door_pink_top"
         }
     },
     "variants": {
