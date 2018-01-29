@@ -4,6 +4,6 @@
         "model": "cube_all"
     },
     "variants": {
-        "normal": [{ "textures": { "all": "blocks/concrete_pink" } }]
+        "normal": [{ "textures": { "all": "integrity:block/reinforced_concrete_pink" } }]
     }
 }
