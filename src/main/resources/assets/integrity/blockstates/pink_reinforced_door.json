@@ -3,10 +3,12 @@
     "defaults": {
         "textures": {
             "bottom": "integrity:block/reinforced_door_pink_bottom",
-            "top": "integrity:block/reinforced_door_pink_top"
+            "top": "integrity:block/reinforced_door_pink_top",
+            "item": "integrity:item/reinforced_door_pink"
         }
     },
     "variants": {
+        "normal": { "model": "integrity:reinforced_door_item" },
         "facing=east,half=lower,hinge=left,open=false":  { "model": "integrity:reinforced_door_bottom" },
         "facing=south,half=lower,hinge=left,open=false": { "model": "integrity:reinforced_door_bottom", "y": 90 },
         "facing=west,half=lower,hinge=left,open=false":  { "model": "integrity:reinforced_door_bottom", "y": 180 },

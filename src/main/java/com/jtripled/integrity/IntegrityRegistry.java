@@ -223,4 +223,10 @@ public class IntegrityRegistry implements Registry
         handler.registerBlock(WHITE_REINFORCED_GLASS_PANE);
         handler.registerBlock(YELLOW_REINFORCED_GLASS_PANE);
     }
+    
+    @Override
+    public void onRegisterRecipes(RegistrationHandler handler)
+    {
+        handler.removeRecipe("minecraft", "iron_bars");
+    }
 }

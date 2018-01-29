@@ -30,6 +30,8 @@ public final class BlockReinforcedDoor extends BlockDoor implements IBlockBase
         super(Material.IRON);
         this.color = color;
         this.registered = false;
+        this.setHardness(200.0f);
+        this.setResistance(8000.0f);
         this.setUnlocalizedName(this.getName());
         this.setRegistryName(new ResourceLocation(Integrity.ID, this.getName()));
         this.setCreativeTab(CreativeTabs.REDSTONE);
@@ -99,6 +101,11 @@ public final class BlockReinforcedDoor extends BlockDoor implements IBlockBase
     @Override
     public TileEntitySpecialRenderer createTESR() {
         return null;
+    }
+
+    @Override
+    public boolean hasUniqueInventoryModel() {
+        return false;
     }
     
     public static class ItemReinforcedDoor extends ItemDoor implements IItemBase

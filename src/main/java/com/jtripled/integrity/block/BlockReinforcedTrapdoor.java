@@ -29,6 +29,8 @@ public class BlockReinforcedTrapdoor extends BlockTrapDoor implements IBlockBase
         super(Material.IRON);
         this.color = color;
         this.registered = false;
+        this.setHardness(200.0f);
+        this.setResistance(8000.0f);
         this.setUnlocalizedName(this.getName());
         this.setRegistryName(new ResourceLocation(Integrity.ID, this.getName()));
         this.setCreativeTab(CreativeTabs.REDSTONE);
@@ -98,5 +100,10 @@ public class BlockReinforcedTrapdoor extends BlockTrapDoor implements IBlockBase
     @Override
     public TileEntitySpecialRenderer createTESR() {
         return null;
+    }
+
+    @Override
+    public boolean hasUniqueInventoryModel() {
+        return false;
     }
 }
