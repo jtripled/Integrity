@@ -46,6 +46,40 @@ public class IntegrityRegistry implements Registry
     public static final IBlockBase WHITE_REINFORCED_CONCRETE_POWDER      = new BlockReinforcedConcretePowder(EnumDyeColor.WHITE);
     public static final IBlockBase YELLOW_REINFORCED_CONCRETE_POWDER     = new BlockReinforcedConcretePowder(EnumDyeColor.YELLOW);
     
+    public static final IBlockBase BLACK_REINFORCED_DOOR      = new BlockReinforcedDoor(EnumDyeColor.BLACK);
+    public static final IBlockBase BLUE_REINFORCED_DOOR       = new BlockReinforcedDoor(EnumDyeColor.BLUE);
+    public static final IBlockBase BROWN_REINFORCED_DOOR      = new BlockReinforcedDoor(EnumDyeColor.BROWN);
+    public static final IBlockBase CYAN_REINFORCED_DOOR       = new BlockReinforcedDoor(EnumDyeColor.CYAN);
+    public static final IBlockBase GRAY_REINFORCED_DOOR       = new BlockReinforcedDoor(EnumDyeColor.GRAY);
+    public static final IBlockBase GREEN_REINFORCED_DOOR      = new BlockReinforcedDoor(EnumDyeColor.GREEN);
+    public static final IBlockBase LIGHT_BLUE_REINFORCED_DOOR = new BlockReinforcedDoor(EnumDyeColor.LIGHT_BLUE);
+    public static final IBlockBase LIME_REINFORCED_DOOR       = new BlockReinforcedDoor(EnumDyeColor.LIME);
+    public static final IBlockBase MAGENTA_REINFORCED_DOOR    = new BlockReinforcedDoor(EnumDyeColor.MAGENTA);
+    public static final IBlockBase ORANGE_REINFORCED_DOOR     = new BlockReinforcedDoor(EnumDyeColor.ORANGE);
+    public static final IBlockBase PINK_REINFORCED_DOOR       = new BlockReinforcedDoor(EnumDyeColor.PINK);
+    public static final IBlockBase PURPLE_REINFORCED_DOOR     = new BlockReinforcedDoor(EnumDyeColor.PURPLE);
+    public static final IBlockBase RED_REINFORCED_DOOR        = new BlockReinforcedDoor(EnumDyeColor.RED);
+    public static final IBlockBase SILVER_REINFORCED_DOOR     = new BlockReinforcedDoor(EnumDyeColor.SILVER);
+    public static final IBlockBase WHITE_REINFORCED_DOOR      = new BlockReinforcedDoor(EnumDyeColor.WHITE);
+    public static final IBlockBase YELLOW_REINFORCED_DOOR     = new BlockReinforcedDoor(EnumDyeColor.YELLOW);
+    
+    public static final IBlockBase BLACK_REINFORCED_TRAPDOOR      = new BlockReinforcedTrapdoor(EnumDyeColor.BLACK);
+    public static final IBlockBase BLUE_REINFORCED_TRAPDOOR       = new BlockReinforcedTrapdoor(EnumDyeColor.BLUE);
+    public static final IBlockBase BROWN_REINFORCED_TRAPDOOR      = new BlockReinforcedTrapdoor(EnumDyeColor.BROWN);
+    public static final IBlockBase CYAN_REINFORCED_TRAPDOOR       = new BlockReinforcedTrapdoor(EnumDyeColor.CYAN);
+    public static final IBlockBase GRAY_REINFORCED_TRAPDOOR       = new BlockReinforcedTrapdoor(EnumDyeColor.GRAY);
+    public static final IBlockBase GREEN_REINFORCED_TRAPDOOR      = new BlockReinforcedTrapdoor(EnumDyeColor.GREEN);
+    public static final IBlockBase LIGHT_BLUE_REINFORCED_TRAPDOOR = new BlockReinforcedTrapdoor(EnumDyeColor.LIGHT_BLUE);
+    public static final IBlockBase LIME_REINFORCED_TRAPDOOR       = new BlockReinforcedTrapdoor(EnumDyeColor.LIME);
+    public static final IBlockBase MAGENTA_REINFORCED_TRAPDOOR    = new BlockReinforcedTrapdoor(EnumDyeColor.MAGENTA);
+    public static final IBlockBase ORANGE_REINFORCED_TRAPDOOR     = new BlockReinforcedTrapdoor(EnumDyeColor.ORANGE);
+    public static final IBlockBase PINK_REINFORCED_TRAPDOOR       = new BlockReinforcedTrapdoor(EnumDyeColor.PINK);
+    public static final IBlockBase PURPLE_REINFORCED_TRAPDOOR     = new BlockReinforcedTrapdoor(EnumDyeColor.PURPLE);
+    public static final IBlockBase RED_REINFORCED_TRAPDOOR        = new BlockReinforcedTrapdoor(EnumDyeColor.RED);
+    public static final IBlockBase SILVER_REINFORCED_TRAPDOOR     = new BlockReinforcedTrapdoor(EnumDyeColor.SILVER);
+    public static final IBlockBase WHITE_REINFORCED_TRAPDOOR      = new BlockReinforcedTrapdoor(EnumDyeColor.WHITE);
+    public static final IBlockBase YELLOW_REINFORCED_TRAPDOOR     = new BlockReinforcedTrapdoor(EnumDyeColor.YELLOW);
+    
     public static final IBlockBase REINFORCED_GLASS            = new BlockReinforcedGlass();
     public static final IBlockBase BLACK_REINFORCED_GLASS      = new BlockReinforcedGlass(EnumDyeColor.BLACK);
     public static final IBlockBase BLUE_REINFORCED_GLASS       = new BlockReinforcedGlass(EnumDyeColor.BLUE);
@@ -118,6 +152,40 @@ public class IntegrityRegistry implements Registry
         handler.registerBlock(SILVER_REINFORCED_CONCRETE_POWDER);
         handler.registerBlock(WHITE_REINFORCED_CONCRETE_POWDER);
         handler.registerBlock(YELLOW_REINFORCED_CONCRETE_POWDER);
+        
+        handler.registerBlock(BLACK_REINFORCED_DOOR);
+        handler.registerBlock(BLUE_REINFORCED_DOOR);
+        handler.registerBlock(BROWN_REINFORCED_DOOR);
+        handler.registerBlock(CYAN_REINFORCED_DOOR);
+        handler.registerBlock(GRAY_REINFORCED_DOOR);
+        handler.registerBlock(GREEN_REINFORCED_DOOR);
+        handler.registerBlock(LIGHT_BLUE_REINFORCED_DOOR);
+        handler.registerBlock(LIME_REINFORCED_DOOR);
+        handler.registerBlock(MAGENTA_REINFORCED_DOOR);
+        handler.registerBlock(ORANGE_REINFORCED_DOOR);
+        handler.registerBlock(PINK_REINFORCED_DOOR);
+        handler.registerBlock(PURPLE_REINFORCED_DOOR);
+        handler.registerBlock(RED_REINFORCED_DOOR);
+        handler.registerBlock(SILVER_REINFORCED_DOOR);
+        handler.registerBlock(WHITE_REINFORCED_DOOR);
+        handler.registerBlock(YELLOW_REINFORCED_DOOR);
+        
+        handler.registerBlock(BLACK_REINFORCED_TRAPDOOR);
+        handler.registerBlock(BLUE_REINFORCED_TRAPDOOR);
+        handler.registerBlock(BROWN_REINFORCED_TRAPDOOR);
+        handler.registerBlock(CYAN_REINFORCED_TRAPDOOR);
+        handler.registerBlock(GRAY_REINFORCED_TRAPDOOR);
+        handler.registerBlock(GREEN_REINFORCED_TRAPDOOR);
+        handler.registerBlock(LIGHT_BLUE_REINFORCED_TRAPDOOR);
+        handler.registerBlock(LIME_REINFORCED_TRAPDOOR);
+        handler.registerBlock(MAGENTA_REINFORCED_TRAPDOOR);
+        handler.registerBlock(ORANGE_REINFORCED_TRAPDOOR);
+        handler.registerBlock(PINK_REINFORCED_TRAPDOOR);
+        handler.registerBlock(PURPLE_REINFORCED_TRAPDOOR);
+        handler.registerBlock(RED_REINFORCED_TRAPDOOR);
+        handler.registerBlock(SILVER_REINFORCED_TRAPDOOR);
+        handler.registerBlock(WHITE_REINFORCED_TRAPDOOR);
+        handler.registerBlock(YELLOW_REINFORCED_TRAPDOOR);
         
         handler.registerBlock(REINFORCED_GLASS);
         handler.registerBlock(BLACK_REINFORCED_GLASS);

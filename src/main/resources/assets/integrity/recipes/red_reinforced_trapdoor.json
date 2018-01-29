@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "reinforced_trapdoor",
+  "pattern": [
+    "#&#",
+    "#@#",
+    "#&#"
+  ],
+  "key": {
+    "&": {
+      "item": "minecraft:iron_bars"
+    },
+    "#": {
+      "item": "minecraft:concrete_powder",
+      "data": 14
+    },
+    "@": {
+      "item": "minecraft:iron_trapdoor"
+    }
+  },
+  "result": {
+    "item": "integrity:red_reinforced_trapdoor"
+  }
+}

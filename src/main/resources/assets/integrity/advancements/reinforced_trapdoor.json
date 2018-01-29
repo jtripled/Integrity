@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "integrity:black_reinforced_trapdoor",
+      "integrity:blue_reinforced_trapdoor",
+      "integrity:brown_reinforced_trapdoor",
+      "integrity:cyan_reinforced_trapdoor",
+      "integrity:gray_reinforced_trapdoor",
+      "integrity:green_reinforced_trapdoor",
+      "integrity:light_blue_reinforced_trapdoor",
+      "integrity:lime_reinforced_trapdoor",
+      "integrity:magenta_reinforced_trapdoor",
+      "integrity:orange_reinforced_trapdoor",
+      "integrity:pink_reinforced_trapdoor",
+      "integrity:purple_reinforced_trapdoor",
+      "integrity:red_reinforced_trapdoor",
+      "integrity:silver_reinforced_trapdoor",
+      "integrity:white_reinforced_trapdoor",
+      "integrity:yellow_reinforced_trapdoor"
+    ]
+  },
+  "criteria": {
+    "has_iron_bars": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_bars"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_bars"
+    ]
+  ]
+}
