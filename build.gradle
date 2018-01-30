@@ -76,16 +76,15 @@ processResources {
     }
 }
 
-def commonManifest = {
-    attributes (
-        "FMLCorePlugin": 'com.jtripled.integrity.asm.IntegrityCorePlugin',
-        "FMLCorePluginContainsFMLMod": 'true',
-        "ForceLoadAsMod": 'true',
-        "FMLAT": 'integrity_at.cfg'
-    )
-}
+//def commonManifest = {
+//    attributes (
+//        "FMLCorePlugin": 'com.jtripled.integrity.asm.IntegrityCorePlugin',
+//        "FMLCorePluginContainsFMLMod": 'true',
+//        "ForceLoadAsMod": 'true'
+//    )
+//}
 
-jar {
-    manifest commonManifest
-    classifier = 'universal'
-}
+//jar {
+//    manifest commonManifest
+//    classifier = 'universal'
+//}
