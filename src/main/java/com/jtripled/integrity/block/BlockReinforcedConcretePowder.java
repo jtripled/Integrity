@@ -26,6 +26,7 @@ import net.minecraft.world.World;
 public final class BlockReinforcedConcretePowder extends BlockBase
 {
     private final EnumDyeColor color;
+    private final Random rand;
     
     public BlockReinforcedConcretePowder(EnumDyeColor color)
     {
@@ -36,6 +37,7 @@ public final class BlockReinforcedConcretePowder extends BlockBase
         this.setRenderLayer(BlockRenderLayer.CUTOUT);
         this.setHarvestable(false);
         this.color = color;
+        this.rand = new Random();
     }
     
     @Override
@@ -73,7 +75,8 @@ public final class BlockReinforcedConcretePowder extends BlockBase
             if (enumfacing != EnumFacing.DOWN)
             {
                 BlockPos blockpos = pos.offset(enumfacing);
-                if (world.getBlockState(blockpos).getMaterial() == Material.WATER)
+                if (world.getBlockState(blockpos).getMaterial() == Material.WATER
+                        && this.rand.nextFloat() > 0.99)
                 {
                     flag = true;
                     break;

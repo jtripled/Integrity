@@ -10,7 +10,7 @@ import net.minecraft.item.EnumDyeColor;
  *
  * @author jtripled
  */
-public class BlockReinforcedTrapdoor extends BlockTrapdoor
+public final class BlockReinforcedTrapdoor extends BlockTrapdoor
 {
     public BlockReinforcedTrapdoor(EnumDyeColor color)
     {
