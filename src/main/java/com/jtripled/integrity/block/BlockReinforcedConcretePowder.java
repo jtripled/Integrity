@@ -1,8 +1,9 @@
 package com.jtripled.integrity.block;
 
-import com.jtripled.integrity.Integrity;
 import com.jtripled.integrity.IntegrityRegistry;
 import com.jtripled.voxen.block.BlockBase;
+import com.jtripled.voxen.block.BlockColored;
+import com.jtripled.voxen.util.Color;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -23,20 +24,20 @@ import net.minecraft.world.World;
  *
  * @author jtripled
  */
-public final class BlockReinforcedConcretePowder extends BlockBase
+public final class BlockReinforcedConcretePowder extends BlockColored
 {
     private final EnumDyeColor color;
     private final Random rand;
     
-    public BlockReinforcedConcretePowder(EnumDyeColor color)
+    public BlockReinforcedConcretePowder(Color color)
     {
-        super(Integrity.INSTANCE, color.getName() + "_reinforced_concrete_powder", Material.SAND, MapColor.getBlockColor(color));
+        super("reinforced_concrete_powder", Material.SAND, color);
         this.setHardness(0.75f);
         this.setResistance(5.0f);
         this.setSoundType(SoundType.SAND);
         this.setRenderLayer(BlockRenderLayer.CUTOUT);
         this.setHarvestable(false);
-        this.color = color;
+        this.color = color.getDyeColor();
         this.rand = new Random();
     }
     

@@ -1,15 +1,13 @@
 package com.jtripled.integrity.block;
 
-import com.jtripled.integrity.Integrity;
-import com.jtripled.voxen.block.BlockBase;
+import com.jtripled.voxen.block.BlockColored;
+import com.jtripled.voxen.util.Color;
 import com.jtripled.voxen.util.HarvestLevel;
+import com.jtripled.voxen.util.Tab;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -21,17 +19,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  *
  * @author jtripled
  */
-public final class BlockReinforcedGlass extends BlockBase
+public final class BlockReinforcedGlass extends BlockColored
 {
     public BlockReinforcedGlass()
     {
         this(null);
     }
     
-    public BlockReinforcedGlass(EnumDyeColor color)
+    public BlockReinforcedGlass(Color color)
     {
-        super(Integrity.INSTANCE, color != null ? color.getName() + "_reinforced_glass" : "reinforced_glass", Material.GLASS, color != null ? MapColor.getBlockColor(color) : MapColor.WHITE_STAINED_HARDENED_CLAY);
-        this.setTab(CreativeTabs.BUILDING_BLOCKS);
+        super("reinforced_glass", Material.GLASS, color);
+        this.setTab(Tab.BUILDING);
         this.setHardness(160.0f);
         this.setResistance(6000.0f);
         this.setSoundType(SoundType.GLASS);

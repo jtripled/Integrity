@@ -22,7 +22,7 @@ public class Integrity extends ModBase
     public static final String ID = "integrity";
     public static final String NAME = "Integrity";
     public static final String VERSION = "1.0";
-    public static final String DEPENDS = "required-after:voxen";
+    public static final String DEPENDS = "required-after:voxenforge";
     
     public static Registry REGISTRY;
 
