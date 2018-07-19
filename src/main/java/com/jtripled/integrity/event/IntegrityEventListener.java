@@ -1,6 +1,6 @@
 package com.jtripled.integrity.event;
 
-import com.jtripled.integrity.IntegrityRegistry;
+import com.jtripled.integrity.IntegrityBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockConcretePowder;
 import net.minecraft.block.state.IBlockState;
@@ -131,23 +131,23 @@ public class IntegrityEventListener implements IWorldEventListener
     {
         switch (state.getValue(BlockConcretePowder.COLOR))
         {
-            case BLACK: return ((Block) IntegrityRegistry.BLACK_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case BLUE: return ((Block) IntegrityRegistry.BLUE_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case BROWN: return ((Block) IntegrityRegistry.BROWN_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case CYAN: return ((Block) IntegrityRegistry.CYAN_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case GRAY: return ((Block) IntegrityRegistry.GRAY_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case GREEN: return ((Block) IntegrityRegistry.GREEN_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case LIGHT_BLUE: return ((Block) IntegrityRegistry.LIGHT_BLUE_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case LIME: return ((Block) IntegrityRegistry.LIME_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case MAGENTA: return ((Block) IntegrityRegistry.MAGENTA_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case ORANGE: return ((Block) IntegrityRegistry.ORANGE_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case PINK: return ((Block) IntegrityRegistry.PINK_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case PURPLE: return ((Block) IntegrityRegistry.PURPLE_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case RED: return ((Block) IntegrityRegistry.RED_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case SILVER: return ((Block) IntegrityRegistry.SILVER_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case WHITE: return ((Block) IntegrityRegistry.WHITE_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            case YELLOW: return ((Block) IntegrityRegistry.YELLOW_REINFORCED_CONCRETE_POWDER).getDefaultState();
-            default: return ((Block) IntegrityRegistry.WHITE_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case BLACK: return ((Block) IntegrityBlocks.BLACK_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case BLUE: return ((Block) IntegrityBlocks.BLUE_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case BROWN: return ((Block) IntegrityBlocks.BROWN_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case CYAN: return ((Block) IntegrityBlocks.CYAN_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case GRAY: return ((Block) IntegrityBlocks.GRAY_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case GREEN: return ((Block) IntegrityBlocks.GREEN_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case LIGHT_BLUE: return ((Block) IntegrityBlocks.LIGHT_BLUE_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case LIME: return ((Block) IntegrityBlocks.LIME_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case MAGENTA: return ((Block) IntegrityBlocks.MAGENTA_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case ORANGE: return ((Block) IntegrityBlocks.ORANGE_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case PINK: return ((Block) IntegrityBlocks.PINK_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case PURPLE: return ((Block) IntegrityBlocks.PURPLE_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case RED: return ((Block) IntegrityBlocks.RED_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case SILVER: return ((Block) IntegrityBlocks.SILVER_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case WHITE: return ((Block) IntegrityBlocks.WHITE_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            case YELLOW: return ((Block) IntegrityBlocks.YELLOW_REINFORCED_CONCRETE_POWDER).getDefaultState();
+            default: return ((Block) IntegrityBlocks.WHITE_REINFORCED_CONCRETE_POWDER).getDefaultState();
         }
     }
 }

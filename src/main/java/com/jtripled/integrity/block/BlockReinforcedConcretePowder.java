@@ -1,9 +1,7 @@
 package com.jtripled.integrity.block;
 
-import com.jtripled.integrity.IntegrityRegistry;
-import com.jtripled.voxen.block.BlockBase;
-import com.jtripled.voxen.block.BlockColored;
-import com.jtripled.voxen.util.Color;
+import com.jtripled.integrity.Integrity;
+import com.jtripled.integrity.IntegrityBlocks;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -24,21 +22,27 @@ import net.minecraft.world.World;
  *
  * @author jtripled
  */
-public final class BlockReinforcedConcretePowder extends BlockColored
+public final class BlockReinforcedConcretePowder extends Block
 {
     private final EnumDyeColor color;
     private final Random rand;
     
-    public BlockReinforcedConcretePowder(Color color)
+    public BlockReinforcedConcretePowder(EnumDyeColor color)
     {
-        super("reinforced_concrete_powder", Material.SAND, color);
+        super(Material.SAND, color == null ? null : MapColor.getBlockColor(color));
+        this.setUnlocalizedName(color == null ? "reinforced_concrete_powder" : color.getName() + "_reinforced_concrete_powder");
+        this.setRegistryName(Integrity.ID, color == null ? "reinforced_concrete_powder" : color.getName() + "_reinforced_concrete_powder");
         this.setHardness(0.75f);
         this.setResistance(5.0f);
         this.setSoundType(SoundType.SAND);
-        this.setRenderLayer(BlockRenderLayer.CUTOUT);
-        this.setHarvestable(false);
-        this.color = color.getDyeColor();
+        this.color = color;
         this.rand = new Random();
+    }
+    
+    @Override
+    public BlockRenderLayer getBlockLayer()
+    {
+        return BlockRenderLayer.CUTOUT;
     }
     
     @Override
@@ -114,23 +118,23 @@ public final class BlockReinforcedConcretePowder extends BlockColored
     {
         switch (color)
         {
-            case BLACK: return (Block) IntegrityRegistry.BLACK_REINFORCED_CONCRETE;
-            case BLUE: return (Block) IntegrityRegistry.BLUE_REINFORCED_CONCRETE;
-            case BROWN: return (Block) IntegrityRegistry.BROWN_REINFORCED_CONCRETE;
-            case CYAN: return (Block) IntegrityRegistry.CYAN_REINFORCED_CONCRETE;
-            case GRAY: return (Block) IntegrityRegistry.GRAY_REINFORCED_CONCRETE;
-            case GREEN: return (Block) IntegrityRegistry.GREEN_REINFORCED_CONCRETE;
-            case LIGHT_BLUE: return (Block) IntegrityRegistry.LIGHT_BLUE_REINFORCED_CONCRETE;
-            case LIME: return (Block) IntegrityRegistry.LIME_REINFORCED_CONCRETE;
-            case MAGENTA: return (Block) IntegrityRegistry.MAGENTA_REINFORCED_CONCRETE;
-            case ORANGE: return (Block) IntegrityRegistry.ORANGE_REINFORCED_CONCRETE;
-            case PINK: return (Block) IntegrityRegistry.PINK_REINFORCED_CONCRETE;
-            case PURPLE: return (Block) IntegrityRegistry.PURPLE_REINFORCED_CONCRETE;
-            case RED: return (Block) IntegrityRegistry.RED_REINFORCED_CONCRETE;
-            case SILVER: return (Block) IntegrityRegistry.SILVER_REINFORCED_CONCRETE;
-            case WHITE: return (Block) IntegrityRegistry.WHITE_REINFORCED_CONCRETE;
-            case YELLOW: return (Block) IntegrityRegistry.YELLOW_REINFORCED_CONCRETE;
-            default: return (Block) IntegrityRegistry.WHITE_REINFORCED_CONCRETE;
+            case BLACK: return (Block) IntegrityBlocks.BLACK_REINFORCED_CONCRETE;
+            case BLUE: return (Block) IntegrityBlocks.BLUE_REINFORCED_CONCRETE;
+            case BROWN: return (Block) IntegrityBlocks.BROWN_REINFORCED_CONCRETE;
+            case CYAN: return (Block) IntegrityBlocks.CYAN_REINFORCED_CONCRETE;
+            case GRAY: return (Block) IntegrityBlocks.GRAY_REINFORCED_CONCRETE;
+            case GREEN: return (Block) IntegrityBlocks.GREEN_REINFORCED_CONCRETE;
+            case LIGHT_BLUE: return (Block) IntegrityBlocks.LIGHT_BLUE_REINFORCED_CONCRETE;
+            case LIME: return (Block) IntegrityBlocks.LIME_REINFORCED_CONCRETE;
+            case MAGENTA: return (Block) IntegrityBlocks.MAGENTA_REINFORCED_CONCRETE;
+            case ORANGE: return (Block) IntegrityBlocks.ORANGE_REINFORCED_CONCRETE;
+            case PINK: return (Block) IntegrityBlocks.PINK_REINFORCED_CONCRETE;
+            case PURPLE: return (Block) IntegrityBlocks.PURPLE_REINFORCED_CONCRETE;
+            case RED: return (Block) IntegrityBlocks.RED_REINFORCED_CONCRETE;
+            case SILVER: return (Block) IntegrityBlocks.SILVER_REINFORCED_CONCRETE;
+            case WHITE: return (Block) IntegrityBlocks.WHITE_REINFORCED_CONCRETE;
+            case YELLOW: return (Block) IntegrityBlocks.YELLOW_REINFORCED_CONCRETE;
+            default: return (Block) IntegrityBlocks.WHITE_REINFORCED_CONCRETE;
         }
     }
     
