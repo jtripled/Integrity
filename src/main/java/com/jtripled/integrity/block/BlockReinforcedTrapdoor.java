@@ -16,7 +16,7 @@ public final class BlockReinforcedTrapdoor extends BlockTrapDoor
     {
         super(Material.IRON);
         this.setUnlocalizedName(color == null ? "reinforced_trapdoor" : color.getName() + "_reinforced_trapdoor");
-        this.setRegistryName(Integrity.ID, color == null ? "reinforced_trapdoor" : color.getName() + "_reinforced_trapdoor");
+        this.setRegistryName(Integrity.getID(), color == null ? "reinforced_trapdoor" : color.getName() + "_reinforced_trapdoor");
         this.setHardness(200.0f);
         this.setResistance(8000.0f);
         this.setCreativeTab(CreativeTabs.REDSTONE);

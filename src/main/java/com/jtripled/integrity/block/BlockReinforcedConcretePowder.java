@@ -31,7 +31,7 @@ public final class BlockReinforcedConcretePowder extends Block
     {
         super(Material.SAND, color == null ? null : MapColor.getBlockColor(color));
         this.setUnlocalizedName(color == null ? "reinforced_concrete_powder" : color.getName() + "_reinforced_concrete_powder");
-        this.setRegistryName(Integrity.ID, color == null ? "reinforced_concrete_powder" : color.getName() + "_reinforced_concrete_powder");
+        this.setRegistryName(Integrity.getID(), color == null ? "reinforced_concrete_powder" : color.getName() + "_reinforced_concrete_powder");
         this.setHardness(0.75f);
         this.setResistance(5.0f);
         this.setSoundType(SoundType.SAND);

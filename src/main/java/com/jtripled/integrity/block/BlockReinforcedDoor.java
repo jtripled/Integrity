@@ -16,7 +16,7 @@ public final class BlockReinforcedDoor extends BlockDoor
     {
         super(Material.IRON);
         this.setUnlocalizedName(color == null ? "reinforced_door" : color.getName() + "_reinforced_door");
-        this.setRegistryName(Integrity.ID, color == null ? "reinforced_door" : color.getName() + "_reinforced_door");
+        this.setRegistryName(Integrity.getID(), color == null ? "reinforced_door" : color.getName() + "_reinforced_door");
         this.setHardness(200.0f);
         this.setResistance(8000.0f);
         this.setCreativeTab(CreativeTabs.REDSTONE);

@@ -30,7 +30,7 @@ public final class BlockReinforcedGlass extends Block
     {
         super(Material.GLASS, color == null ? null : MapColor.getBlockColor(color));
         this.setUnlocalizedName(color == null ? "reinforced_glass" : color.getName() + "_reinforced_glass");
-        this.setRegistryName(Integrity.ID, color == null ? "reinforced_glass" : color.getName() + "_reinforced_glass");
+        this.setRegistryName(Integrity.getID(), color == null ? "reinforced_glass" : color.getName() + "_reinforced_glass");
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         this.setHardness(160.0f);
         this.setResistance(6000.0f);

@@ -23,7 +23,7 @@ public final class BlockReinforcedGlassPane extends BlockPane
     {
         super(Material.GLASS, false);
         this.setUnlocalizedName(color == null ? "reinforced_glass_pane" : color.getName() + "_reinforced_glass_pane");
-        this.setRegistryName(Integrity.ID, color == null ? "reinforced_glass_pane" : color.getName() + "_reinforced_glass_pane");
+        this.setRegistryName(Integrity.getID(), color == null ? "reinforced_glass_pane" : color.getName() + "_reinforced_glass_pane");
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         this.setHardness(120.0f);
         this.setResistance(4000.0f);

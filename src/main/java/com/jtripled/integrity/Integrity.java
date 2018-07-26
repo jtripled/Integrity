@@ -6,24 +6,27 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 /**
  *
  * @author jtripled
  */
-@Mod(modid = Integrity.ID, name = Integrity.NAME, version = Integrity.VERSION, dependencies = Integrity.DEPENDS)
+@Mod(modid = "@mod_id@", name = "@mod_name@", version = "@mod_version@", dependencies = "@mod_depends@")
 public class Integrity
 {
-    public static final String ID = "integrity";
-    public static final String NAME = "Integrity";
-    public static final String VERSION = "1.0";
-    public static final String DEPENDS = "";
+    protected static final String ID = "@mod_id@";
+    protected static final String NAME = "@mod_name@";
+    protected static final String VERSION = "@mod_version@";
+    protected static final String DEPENDS = "@mod_depends@";
     
     @Mod.Instance(ID)
-    public static Integrity INSTANCE;
+    protected static Integrity INSTANCE;
     
     @SidedProxy(serverSide = "com.jtripled." + ID + ".proxy.ProxyServer", clientSide = "com.jtripled." + ID + ".proxy.ProxyClient")
-    public static Proxy PROXY;
+    protected static Proxy PROXY;
+    
+    protected static final SimpleNetworkWrapper NETWORK = new SimpleNetworkWrapper(ID);
     
     public static Integrity getInstance()
     {
@@ -50,21 +53,26 @@ public class Integrity
         return PROXY;
     }
     
-    @Mod.EventHandler
-    public void onPreInit(FMLPreInitializationEvent event)
+    public static SimpleNetworkWrapper getNetwork()
     {
-        
+        return NETWORK;
     }
     
     @Mod.EventHandler
-    public void onInit(FMLInitializationEvent event)
+    protected void onPreInit(FMLPreInitializationEvent event)
     {
-        
+        PROXY.onPreInit(event);
     }
     
     @Mod.EventHandler
-    public void onPostInit(FMLPostInitializationEvent event)
+    protected void onInit(FMLInitializationEvent event)
     {
-        
+        PROXY.onInit(event);
+    }
+    
+    @Mod.EventHandler
+    protected void onPostInit(FMLPostInitializationEvent event)
+    {
+        PROXY.onPostInit(event);
     }
 }
